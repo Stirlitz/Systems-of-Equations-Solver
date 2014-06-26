@@ -44,11 +44,10 @@ def LinearEquationsTwoVariables():
         eqs[i].append(b)
         eqs[i].append(c)
 
-    if eqs[0][0] / eqs[1][0] == eqs[0][1] / eqs[1][1] == eqs[0][2] / eqs[1][2]: # check for equal lines
-        return "Lines are the same; infinite number of solutions."
-
-    elif eqs[0][0] / eqs[1][0] == eqs[0][1] / eqs[1][1]: # check for parallel lines
-        return "Lines are parallel; no solution."
+    if eqs[0][0] / eqs[1][0] == eqs[0][1] / eqs[1][1]: # check for parallel or equal lines
+        if eqs[0][0] / eqs[1][0] == eqs[0][2] / eqs[1][2]: # equal
+            return "Lines are the same; infinite number of solutions."
+        else: return "Lines are parallel; no solution." # parallel
 
     y = (eqs[0][0]*eqs[1][2] - eqs[1][0]*eqs[0][2]) / (eqs[1][0]*eqs[0][1] - eqs[0][0]*eqs[1][1]) # determine y
     x = -1*(eqs[0][1]*y + eqs[0][2])/eqs[0][0] # determine x
