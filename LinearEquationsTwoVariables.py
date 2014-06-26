@@ -3,11 +3,9 @@
 
 # Linear equation solver, two variables in standard form.
 
-import sys
-
 def LinearEquationsTwoVariables():
 
-    eqs = [[] for i in range(2)] # holds the coefficient values for both equations
+    eqs = [[],[]] # holds the coefficient values for both equations
 
     for i in range(2):
 
